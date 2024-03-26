@@ -2,7 +2,7 @@
   <div>
     <div style="padding-bottom: 10px;">
     </div>
-    <panel title="Export Problems (beta)">
+    <panel title="Xuất bài tập (beta)">
       <div slot="header">
         <el-input
           v-model="keyword"
@@ -56,7 +56,7 @@
         </el-pagination>
       </div>
     </panel>
-    <panel title="Import QDUOJ Problems (beta)">
+    <panel title="Import bài tập QDUOJ (beta)">
       <el-upload
         ref="QDU"
         action="/api/admin/import_problem"
@@ -74,7 +74,7 @@
       </el-upload>
     </panel>
 
-    <panel title="Import FPS Problems (beta)">
+    <panel title="Import bài tập FPS (beta)">
       <el-upload
         ref="FPS"
         action="/api/admin/import_fps"

@@ -50,7 +50,7 @@
 <style scoped lang="less">
   .vertical_menu {
     overflow: auto;
-    width: 205px;
+    width: 250px;
     height: 100%;
     position: fixed !important;
     z-index: 100;
