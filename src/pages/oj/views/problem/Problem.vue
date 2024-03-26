@@ -140,14 +140,16 @@
         </div>
         <ul>
           <li><p>ID</p>
-            <p>{{problem._id}}</p></li>
+            <p>{{problem._id}}</p>
+          </li>
           <li>
             <p>{{$t('m.Time_Limit')}}</p>
-            <p>{{problem.time_limit}}MS</p></li>
+            <p>{{problem.time_limit}}MS</p>
+          </li>
           <li>
             <p>{{$t('m.Memory_Limit')}}</p>
-            <p>{{problem.memory_limit}}MB</p></li>
-          <li>
+            <p>{{problem.memory_limit}}MB</p>
+          </li>
           <li>
             <p>{{$t('m.IOMode')}}</p>
             <p>{{problem.io_mode.io_mode}}</p>
@@ -373,9 +375,10 @@
         })
       },
       checkSubmissionStatus () {
-        // 使用setTimeout避免一些问题
+        // Sử dụng setTimeout để tránh một số vấn đề
         if (this.refreshStatus) {
-          // 如果之前的提交状态检查还没有停止,则停止,否则将会失去timeout的引用造成无限请求
+          // Nếu quá trình kiểm tra trạng thái gửi trước đó chưa dừng thì hãy dừng nó lại,
+          // nếu không tham chiếu hết thời gian chờ sẽ bị mất và gây ra vô số yêu cầu.
           clearTimeout(this.refreshStatus)
         }
         const checkStatus = () => {
@@ -418,7 +421,7 @@
           this.statusVisible = true
           api.submitCode(data).then(res => {
             this.submissionId = res.data.data && res.data.data.submission_id
-            // 定时检查状态
+            // Check status regularly
             this.submitting = false
             this.submissionExists = true
             if (!detailsVisible) {
@@ -446,7 +449,8 @@
               title: '',
               content: '<h3>' + this.$i18n.t('m.You_have_submission_in_this_problem_sure_to_cover_it') + '<h3>',
               onOk: () => {
-                // 暂时解决对话框与后面提示对话框冲突的问题(否则一闪而过）
+                // Giải quyết tạm thời vấn đề xung đột giữa hộp thoại và
+                // hộp thoại nhắc tiếp theo (nếu không sẽ trôi qua trong nháy mắt)
                 setTimeout(() => {
                   submitFunc(data, false)
                 }, 1000)
