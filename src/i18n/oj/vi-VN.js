@@ -252,7 +252,7 @@ export const m = {
   Pending: 'Đang chờ xử lý',
   Partial_Accepted: 'Chấp nhận một phần',
   Compile_Error: 'Lỗi biên dịch',
-  Rejudge: 'Kiểm tra lại',
+  Rejudge: 'Kiểm tra',
   // UserHome.vue
   UserHomeSolved: 'Đã giải',
   UserHomeserSubmissions: 'Bài nộp',

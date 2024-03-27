@@ -42,6 +42,13 @@
   </div>
 </template>
 
+<style>
+  .ivu-table-cell {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+</style>
+
 <script>
   import { mapGetters } from 'vuex'
   import api from '@oj/api'
